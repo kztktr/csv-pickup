@@ -1,0 +1,41 @@
+Private Sub CommandButton1_Click()
+'取得項目抜き出し
+    'Range("ログ抽出用!A1:EP1").Copy Range("csvペースト用!A1:EP1")
+    'Range("ログ抽出用!A2:EP2").Value = Range("csvペースト用!A72:EP72").Value
+    'Range("ログ抽出用!A3:EP3").Value = Range("csvペースト用!A76:EP76").Value
+    'Range("ログ抽出用!A4:EP4").Value = Range("csvペースト用!A101:EP101").Value
+    'Range("ログ抽出用!A5:EP5").Value = Range("csvペースト用!A104:EP104").Value
+    'Range("ログ抽出用!A6:EP6").Value = Range("csvペースト用!A308:EP308").Value
+    'Range("ログ抽出用!A7:EP7").Value = Range("csvペースト用!A335:EP335").Value
+    'Range("ログ抽出用!A8:EP8").Value = Range("csvペースト用!A347:EP347").Value
+    'Range("ログ抽出用!A9:EP9").Value = Range("csvペースト用!A350:EP350").Value
+    'Range("ログ抽出用!A10:EP10").Value = Range("csvペースト用!A351:EP351").Value
+    Sheets("csvペースト用").Range("A1", "EP1").Copy Destination:=Sheets("ログ抽出用").Range("A1", "EP1")
+    Sheets("csvペースト用").Range("A72", "EP72").Copy Destination:=Sheets("ログ抽出用").Range("A2", "EP2")
+    Sheets("csvペースト用").Range("A76", "EP76").Copy Destination:=Sheets("ログ抽出用").Range("A3", "EP3")
+    Sheets("csvペースト用").Range("A101", "EP101").Copy Destination:=Sheets("ログ抽出用").Range("A4", "EP4")
+    Sheets("csvペースト用").Range("A104", "EP104").Copy Destination:=Sheets("ログ抽出用").Range("A5", "EP5")
+    Sheets("csvペースト用").Range("A308", "EP308").Copy Destination:=Sheets("ログ抽出用").Range("A6", "EP6")
+    Sheets("csvペースト用").Range("A335", "EP335").Copy Destination:=Sheets("ログ抽出用").Range("A7", "EP7")
+    Sheets("csvペースト用").Range("A347", "EP347").Copy Destination:=Sheets("ログ抽出用").Range("A8", "EP8")
+    Sheets("csvペースト用").Range("A350", "EP350").Copy Destination:=Sheets("ログ抽出用").Range("A9", "EP9")
+    Sheets("csvペースト用").Range("A351", "EP351").Copy Destination:=Sheets("ログ抽出用").Range("A10", "EP10")
+'罫線を引く
+ '①上部
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlEdgeTop).LineStyle = xlContinuous
+    '②左A1:EP10
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlEdgeLeft).LineStyle = xlContinuous
+    '③下部
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlEdgeBottom).LineStyle = xlContinuous
+    '④右
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlEdgeRight).LineStyle = xlContinuous
+    '⑤範囲内の縦線
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlInsideVertical).LineStyle = xlContinuous
+    '⑥範囲内の横線
+    Sheets("ログ抽出用").Range("A1:EP10").Borders(xlInsideHorizontal).LineStyle = xlContinuous
+End Sub
+
+Private Sub CommandButton2_Click()
+    Worksheets("ログ抽出用").Cells.Clear
+    Worksheets("csvペースト用").Cells.Clear
+End Sub
